@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.start-btn {
+    color: rgb(46, 45, 45);
+    background-color: aqua;
+    border: 1px solid aqua;
+    width: 190px;
+    text-align: center;
+    border-radius: 9px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.home {
+    height: calc(100vh);
+}
+nav {
+    z-index: 1;
+    position: fixed;
+}
+
+.triangle {
+    z-index: 999;
+}
+
+.robot {
+    z-index: 1000;
+}
+
+.font-outline-2 {
+    -webkit-text-stroke: 1px #146C94;
+    color: transparent;
+    font-weight: 700;
+  }
+
+html {
+    background-color: #1A1B1F;
+}
+
+.login-input {
+    border-radius: 2px;
+    border-bottom: 1px solid #146C94;
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0.00) 0%, #131313 100%);
+    height: 70px;
+    padding-left: 10px;
+    margin-top: 10px;
+    max-width: 90%;
+}
+
+.login-input:focus {
+
+    border-bottom: 1px solid #47b6e9;
+}
+
+input:focus {
+    outline: 0;
+}

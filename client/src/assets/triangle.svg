@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1222.674" height="1497.798" viewBox="0 0 1222.674 1497.798">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #2FE6DE;
+      }
+
+      .cls-2 {
+        stroke: #146C94;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        filter: url(#Soustraction_1);
+      }
+    </style>
+    <filter id="Soustraction_1" x="15.674" y="0" width="1207" height="1497.798" filterUnits="userSpaceOnUse">
+      <feOffset dx="-30" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.6"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Groupe_1" data-name="Groupe 1" transform="translate(-697.326 405.798)">
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, 697.33, -405.8)">
+      <path id="Soustraction_1-2" data-name="Soustraction 1" class="cls-1" d="M1183,1479.8v0H0L1183,0V1479.8Z" transform="translate(39.67 6)"/>
+    </g>
+    <path id="Tracé_1" data-name="Tracé 1" class="cls-2" d="M0,1480.3,1177.985,0" transform="translate(698.5 -399.798)"/>
+  </g>
+</svg>
