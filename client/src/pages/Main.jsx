@@ -5,7 +5,7 @@ import { Navbar } from '../components'
 export default function Main(){
   
   return (
-      <div className='bg-primary'>
+      <div className='bg-primary h-full'>
         <Navbar />
         <Outlet/>
       </div>

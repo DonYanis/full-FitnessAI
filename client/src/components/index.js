@@ -5,7 +5,8 @@ import Login from './Login'
 import GoalsForm from './GoalsForm'
 import Navbar from './Navbar'
 import ProfileForm from './ProfileForm'
-
+import RadioBtn from './RadioBtn'
+import ChoicesList from './ChoicesList'
 
 export {
     Triangle,
@@ -14,5 +15,7 @@ export {
     Login,
     GoalsForm,
     Navbar,
-    ProfileForm
+    ProfileForm,
+    RadioBtn,
+    ChoicesList
 }

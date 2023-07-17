@@ -1,9 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
+
 
 const Error = () => {
+
   return (
-    <div>Error</div>
+    <div>error</div>
   )
 }
 
 export default Error
+
+
+
