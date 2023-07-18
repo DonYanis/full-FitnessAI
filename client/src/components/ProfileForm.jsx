@@ -5,8 +5,8 @@ import RangeInput from './RangeInput'
 
 const ProfileForm = () => {
   return (
-   <div className='form md:h-[90%] flex flex-col md:flex-row items-center justify-between px-0 md:px-[20px] '>
-      <div className='px-5 flex flex-col  items-start min-h-[400px] h-[90%]'>
+   <div className='m-auto pt-3 form md:h-[90%] flex flex-col md:flex-row items-center justify-between px-0 md:px-[20px] '>
+      <div className='px-5 flex flex-col  items-start min-h-[300px] h-[90%]'>
 
         {
           ProfileData.map((e,index) => <ChoicesList key={index} title={e.title} choices={e.choices}/>)

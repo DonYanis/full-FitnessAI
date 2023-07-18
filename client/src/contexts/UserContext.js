@@ -28,6 +28,11 @@ export function UserProvider({children}){
     })
   }
 
+  function handleLogout(){
+    setUser(null)
+    navigate('/')
+  }
+
   function handleSubmit() {
 
     if(loginForm.username.length > 0 && loginForm.password.length > 0){
@@ -52,7 +57,7 @@ export function UserProvider({children}){
   }
 
   return (
-      <UserContext.Provider value={user}>
+      <UserContext.Provider value={{user,handleLogout}}>
         <FormContext.Provider value={{loginForm, handleChange, handleSubmit}}>
           {children}
         </FormContext.Provider>

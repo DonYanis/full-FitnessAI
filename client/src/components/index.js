@@ -7,6 +7,11 @@ import Navbar from './Navbar'
 import ProfileForm from './ProfileForm'
 import RadioBtn from './RadioBtn'
 import ChoicesList from './ChoicesList'
+import Arrow from './Arrow'
+import HealthResult from './HealthResult'
+import TrainingResult from './TrainingResult'
+import AiAdviceResult from './AiAdviceResult'
+import Macros from './Macros'
 
 export {
     Triangle,
@@ -17,5 +22,10 @@ export {
     Navbar,
     ProfileForm,
     RadioBtn,
-    ChoicesList
+    ChoicesList,
+    Arrow,
+    HealthResult,
+    AiAdviceResult,
+    TrainingResult,
+    Macros
 }

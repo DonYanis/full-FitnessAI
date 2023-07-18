@@ -43,16 +43,11 @@ nav {
 .font-outline-2 {
     -webkit-text-stroke: 1px #146C94;
     color: transparent;
-    font-weight: 700;
+    font-weight: 800;
   }
 
-html, body {
+html, body, #root {
     background-color: #1A1B1F;
-    height: 100%;
-    width: 100%;
-}
-
-#root {
     height: 100%;
     width: 100%;
 }
@@ -84,7 +79,7 @@ input:focus {
     outline: none;
     border-radius: 5px;
     margin: 5px 0;
-  }
+}
   
 .range-input::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -94,23 +89,23 @@ input:focus {
     background-color: #2FE6DE; /* Set the color of the thumb */
     border-radius: 50%;
     cursor: pointer;
-  }
+}
   
-  .range-input::-moz-range-thumb {
+.range-input::-moz-range-thumb {
     width: 30px;
     height: 30px;
     background-color: #2FE6DE; 
     border-radius: 50%;
     cursor: pointer;
-  }
+}
   
-  .range-input::-ms-thumb {
+.range-input::-ms-thumb {
     width: 30px;
     height: 30px;
     background-color: #2FE6DE;
     border-radius: 50%;
     cursor: pointer;
-  }
+}
   
 @media (max-width: 300px) {
     .rad-btn {
@@ -129,6 +124,52 @@ input:focus {
     width: 0px;
 }
 
-.form {
-    width: 1200px;
+.macros-box {
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px 0px #00CECB;
+}
+
+.macros-box:hover {
+    box-shadow: 5px 4px 4px 0px #0ff1ee;
+}
+
+@media (max-width: 781px) {
+    .ai-result{
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .bar{
+        display: none;
+    }
+
+    .food-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 853px) {
+    .card{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 328px) {
+    .macros-box{
+        width: auto;
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo-text, .user{
+        font-size: 14px;
+    }
+
+
+    .logo-btn {
+        width: 50px;
+    }
 }

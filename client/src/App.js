@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter  , Route, Routes } from 'react-router-dom';
 
-import {Main, Home, Form, Error} from './pages'
+import {Main, Home, Form, Error, Results} from './pages'
 import { UserProvider } from './contexts/UserContext';
 
 export default function App(){
@@ -14,6 +14,7 @@ export default function App(){
             <Route index element={<Home/>}/>
             <Route path='login' element={<Home/>}/>
             <Route path='form' element={<Form/>}/>
+            <Route path='result' element={<Results/>}/>
             <Route path='*' element={<Error/>}/>
           </Route>
         </Routes>
