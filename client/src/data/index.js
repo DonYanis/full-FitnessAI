@@ -1,6 +1,7 @@
 const ProfileData =  [
     {
         title : 'AGE',
+        formOption: 'age',
         choices : [
             {value: 'CHILD', extra: '< 12'},
             {value: 'TEEN', extra: '13 - 17'},
@@ -11,6 +12,7 @@ const ProfileData =  [
     },
     {
         title : 'GENDER',
+        formOption: 'gender',
         choices : [
             {value: 'MALE', extra: null},
             {value: 'FEMALE', extra: null}
@@ -18,6 +20,7 @@ const ProfileData =  [
     },
     {
         title : 'DAILY ACTIVITY LEVEL',
+        formOption: 'activity',
         choices : [
             {value: 'LOW', extra:null},
             {value: 'MEDIUM', extra:null},
@@ -29,6 +32,7 @@ const ProfileData =  [
 const GoalData = [
     {
         title : 'DEFINE YOUR GOAL',
+        formOption: 'goal',
         choices : [
             {value: 'LOSS', extra:null},
             {value: 'GAIN', extra:null},
@@ -39,6 +43,7 @@ const GoalData = [
     },
     {
         title : 'HOW IS YOUR WEEKLY SCHEDULE',
+        formOption: 'schedule',
         choices : [
             {value: 'OPEN', extra: null},
             {value: 'FLEXIBLE', extra: null},

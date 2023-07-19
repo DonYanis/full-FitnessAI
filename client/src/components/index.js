@@ -12,6 +12,7 @@ import HealthResult from './HealthResult'
 import TrainingResult from './TrainingResult'
 import AiAdviceResult from './AiAdviceResult'
 import Macros from './Macros'
+import Notification from './Notification'
 
 export {
     Triangle,
@@ -27,5 +28,6 @@ export {
     HealthResult,
     AiAdviceResult,
     TrainingResult,
-    Macros
+    Macros,
+    Notification
 }

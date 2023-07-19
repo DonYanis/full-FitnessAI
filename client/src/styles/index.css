@@ -173,3 +173,18 @@ input:focus {
         width: 50px;
     }
 }
+
+.notification {
+    box-shadow: 2px 2px 4px 0px #00CECB;
+    transition: left 1s ease-in-out;
+    animation: moveLeft 1s ease-in-out;
+}
+
+@keyframes moveLeft {
+    from {
+        right: -100px;
+    }
+    to {
+        right: 10px;
+    }
+}

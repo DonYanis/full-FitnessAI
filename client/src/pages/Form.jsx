@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Box } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 
-import {GoalsForm, ProfileForm,Arrow} from '../components'
+import {GoalsForm, ProfileForm, Arrow, Notification} from '../components'
+import { useMainForm } from '../contexts/MainFormContext';
 
 const Form = () => {
   const [formState, setFormState] = useState({profile:'block', goal:'hidden'})
-  const navigate = useNavigate()
+  const { handleSubmit } = useMainForm()
 
   const toggleRight = () => {
       setFormState({profile:'hidden', goal:'block'}) 
@@ -16,12 +16,10 @@ const Form = () => {
     setFormState({profile:'block', goal:'hidden'}) 
   }
 
-  const handleSubmit = () => {
-    navigate('/result')
-  }
-
   return (
     <div className='relative pt-[100px] h-full w-full felx flex-col items-center'>
+      
+      <Notification/>
 
       <Box className='w-full flex flex-row items-center justify-around px-[20%] pb-3'>
         <div className={`w-[25px] h-[25px]  border-4 border-secondary rounded-full ${formState.profile === 'block' ? 'bg-secondary' : ''} `}></div>
