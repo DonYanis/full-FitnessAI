@@ -69,7 +69,7 @@ def backward_chaining(fc, exp) :
         for dic in result : 
             data.append(str(dic.get(x)))
         return data
-    return None
+    return ['NOT SURE']
 
 
 def inference_engine(fc, agenda) : 
