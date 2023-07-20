@@ -13,6 +13,7 @@ import TrainingResult from './TrainingResult'
 import AiAdviceResult from './AiAdviceResult'
 import Macros from './Macros'
 import Notification from './Notification'
+import Loader from './Loader'
 
 export {
     Triangle,
@@ -29,5 +30,6 @@ export {
     AiAdviceResult,
     TrainingResult,
     Macros,
-    Notification
+    Notification,
+    Loader
 }

@@ -10,7 +10,7 @@ const RangeInput = ({name,min,max,unity}) => {
     setMainForm(prev => {
       return {
         ...prev,
-        [name] : name === 'height' ? e.target.value / 100 : e.target.value
+        [name] : name === 'height' ? e.target.value / 100 : e.target.value / 1
       }
     })
   } 

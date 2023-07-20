@@ -1,6 +1,5 @@
 import React, {createContext, useContext, useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { useUser } from "./UserContext";
 
 const MainFormContext = createContext()
 
@@ -11,11 +10,11 @@ export function useMainForm() {
 
 
 export function MainFormProvider({children}){
-  
-  const {user} = useUser()
+
+  const [loading, setLoading] = useState(false)
 
   const [mainForm, setMainForm] = useState({
-    username: user,
+    username: '',
     age : "YOUNGADULT",
     gender : "MALE",
     activity : "MEDIUM",
@@ -26,45 +25,57 @@ export function MainFormProvider({children}){
   })
 
   const [result, setResult] = useState({
-    health: "GOOD",
-    food: "INCREASE",
-    training: "AVERAGE",
-    program: [
-        "PPL",
-        "GVT",
-        "FourDay_SPLIT"
-    ],
-    eat: [
-        "Protein",
-        "Complex_carbohydrates",
-        "Healthy_fats"
-    ],
-    avoid: [
-        "Processed_snacks",
-        "Soda",
-        "Fried_food"
-    ],
-    advice: [
-        "Lift heavy, eat protein",
-        "Prioritize protein and fiber"
-    ],
+    health: "",
+    food: "",
+    training: "",
+    program: [],
+    eat: [],
+    avoid: [],
+    advice: [],
     macros: {
-        calories: 2753.4696000000004,
-        protein: 147.0,
-        fat: 91.78232000000001,
-        carbs: 344.18370000000004,
-        fibers: 35.0
+        calories: 0,
+        protein: 0,
+        fat: 0,
+        carbs: 0,
+        fibers: 0
     }
   })
 
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    navigate('/result')
+
+    setLoading(()=>true)
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(mainForm),
+    }
+    
+    fetch(`http://127.0.0.1:8000/api/home/`, requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        if(data.status === 'success'){
+          
+          setResult(data.data)
+          localStorage.setItem('fitnessData', JSON.stringify(data.data))
+
+          navigate('/result')
+          setLoading(()=>false)
+        }else{
+          setLoading(()=>false)
+          navigate('/error')
+        }
+      })
+      .catch((error) => {
+        setLoading(()=>false)
+        navigate('/error')
+      })
   }
 
   return (
-      <MainFormContext.Provider value={{mainForm, handleSubmit, setMainForm, result}}>
+      <MainFormContext.Provider value={{mainForm, handleSubmit, setMainForm, result, setResult, loading, setLoading}}>
         {children}
       </MainFormContext.Provider>
   ) 
