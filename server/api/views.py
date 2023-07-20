@@ -33,20 +33,18 @@ def getUsers(request):
 
 @api_view(['POST'])
 def login(request):    
-    created = False
     try :
         data  = request.data
         if User.objects.filter(username = data['username']).exists() :
             if not User.objects.filter(username= data['username'], password=data['password']).exists() :
                 return Response({'status' : 'fail','message' : 'change username or password'},status=status.HTTP_400_BAD_REQUEST)
+            user = User.objects.get(username=data['username'])
+            return Response({'status' : 'success', 'username':data['username'], 'hasData': user.has_data})
         else :
-            created = True
             User.objects.create(username=data['username'], password=data['password'])
+            return Response({'status' : 'success','hasData' : False, 'username':data['username']})
 
     except Exception as e:
         print(e)
         return Response({'status' : 'fail','message' : 'user not logged in'},status=status.HTTP_400_BAD_REQUEST)
-    if created :
-        return Response({'status' : 'success','message' : 'created', 'username':data['username']})
-    else :
-        return Response({'status' : 'success','message' : 'logged in', 'username':data['username']})
+    
