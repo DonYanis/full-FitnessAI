@@ -39,20 +39,23 @@ def usersController(request):
             data = serializer.data
 
             res = {
-                'health': data['health'],
-                'food': data['food'],
-                'training': data['training'],
-                'program': data['program'],
-                'eat': data['eat'],
-                'avoid': data['avoid'],
-                'advice': data['advice'],
-                'macros': {
-                    'calories': int(data['calories']),
-                    'protein': int(data['protein']),
-                    'fat': int(data['fat']),
-                    'carbs': int(data['carbs']),
-                    'fibers': int(data['fibers'])
-                    }
+                'status' : 'success',
+                'data' : {
+                    'health': data['health'],
+                    'food': data['food'],
+                    'training': data['training'],
+                    'program': data['program'],
+                    'eat': data['eat'],
+                    'avoid': data['avoid'],
+                    'advice': data['advice'],
+                    'macros': {
+                        'calories': int(data['calories']),
+                        'protein': int(data['protein']),
+                        'fat': int(data['fat']),
+                        'carbs': int(data['carbs']),
+                        'fibers': int(data['fibers'])
+                        }
+                }
             }
             return Response(res)
             
