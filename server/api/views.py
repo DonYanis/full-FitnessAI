@@ -24,12 +24,42 @@ def home(request):
     
     return Response({'status' : 'success','data' : result})
 
-@api_view(['GET'])
-def getUsers(request):
+@api_view(['GET','POST'])
+def usersController(request):
 
-    users = User.objects.all()
-    serializer = UserSerializer(users, many=True)
-    return Response(serializer.data)
+    if request.method == 'GET' : 
+        users = User.objects.all()
+        serializer = UserSerializer(users, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST' : 
+        try :
+            user = User.objects.get(username = request.data['username'])
+            serializer = UserSerializer(user)
+            data = serializer.data
+
+            res = {
+                'health': data['health'],
+                'food': data['food'],
+                'training': data['training'],
+                'program': data['program'],
+                'eat': data['eat'],
+                'avoid': data['avoid'],
+                'advice': data['advice'],
+                'macros': {
+                    'calories': int(data['calories']),
+                    'protein': int(data['protein']),
+                    'fat': int(data['fat']),
+                    'carbs': int(data['carbs']),
+                    'fibers': int(data['fibers'])
+                    }
+            }
+            return Response(res)
+            
+        except Exception as e:
+            return Response({'status' : 'fail','message' : 'ERROR !'},status=status.HTTP_400_BAD_REQUEST)
+    
+
 
 @api_view(['POST'])
 def login(request):    
