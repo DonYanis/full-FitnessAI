@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 from api.serializers import UserSerializer
+import ast
 
 from api.ai.ai_controller import generate_ai_data
 from api.utils import update_user
@@ -44,10 +45,10 @@ def usersController(request):
                     'health': data['health'],
                     'food': data['food'],
                     'training': data['training'],
-                    'program': data['program'],
-                    'eat': data['eat'],
-                    'avoid': data['avoid'],
-                    'advice': data['advice'],
+                    'program': ast.literal_eval(data['program']),
+                    'eat': ast.literal_eval(data['eat']),
+                    'avoid': ast.literal_eval(data['avoid']),
+                    'advice': ast.literal_eval(data['advice']),
                     'macros': {
                         'calories': int(data['calories']),
                         'protein': int(data['protein']),
