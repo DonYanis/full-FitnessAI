@@ -14,7 +14,7 @@ const Navbar = () => {
       <h1 className='logo-text text-[18px] md:text-[24px] text-[#fff] px-4'>FITNESS-<span className='text-secondary'>AI</span></h1>
       </Link>
       {user && 
-      <div className='flex flex-row items-center w-[150px] justify-between  '>
+      <div className='user-info items-center w-[150px] justify-between  '>
         <div className='user text-[18px] text-[#fff]'>#{user.username}</div>
         <Button 
           onClick={handleLogout}
