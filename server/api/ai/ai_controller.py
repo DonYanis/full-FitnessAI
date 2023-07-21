@@ -28,11 +28,9 @@ def generate_ai_data(data) :
 
     # 2- Working Memory
     memory = init_user(data,fc)
-    print("Memory : \n",memory)
 
     # 3- genearating the agenda
     agenda = generate_agenda(data['username'])
-    print("Agenda : \n",agenda)
 
     # 4- inference
     result = inference_engine(fc, agenda)

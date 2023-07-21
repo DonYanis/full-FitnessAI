@@ -1,4 +1,16 @@
 from api.models import User
+import bcrypt
+
+def hash_password(password):
+
+    salt = bcrypt.gensalt()
+    hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt)
+    return hashed_password.decode('utf-8')
+
+
+def verify_password(hashed_password, password_to_check):
+
+    return bcrypt.checkpw(password_to_check.encode('utf-8'), hashed_password.encode('utf-8'))
 
 
 def update_user(username, data) :

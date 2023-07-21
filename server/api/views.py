@@ -6,7 +6,7 @@ from api.serializers import UserSerializer
 import ast
 
 from api.ai.ai_controller import generate_ai_data
-from api.utils import update_user
+from api.utils import update_user, hash_password, verify_password
 
 @api_view(['POST'])
 def home(request):
@@ -68,14 +68,19 @@ def usersController(request):
 @api_view(['POST'])
 def login(request):    
     try :
-        data  = request.data
+        data = request.data
         if User.objects.filter(username = data['username']).exists() :
-            if not User.objects.filter(username= data['username'], password=data['password']).exists() :
-                return Response({'status' : 'fail','message' : 'change username or password'},status=status.HTTP_400_BAD_REQUEST)
+            #verify the password : 
             user = User.objects.get(username=data['username'])
-            return Response({'status' : 'success', 'username':data['username'], 'hasData': user.has_data})
+            is_password_correct = verify_password(user.password, data['password'])
+            if is_password_correct :
+                return Response({'status' : 'success', 'username':data['username'], 'hasData': user.has_data})
+            return Response({'status' : 'fail','message' : 'change username or password'},status=status.HTTP_400_BAD_REQUEST)
+
         else :
-            User.objects.create(username=data['username'], password=data['password'])
+            #hash the password : 
+            hashed_password = hash_password(data['password'])
+            User.objects.create(username=data['username'], password=hashed_password)
             return Response({'status' : 'success','hasData' : False, 'username':data['username']})
 
     except Exception as e:
