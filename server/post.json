@@ -1,9 +1,0 @@
-{
-    "age" : ["CHILD","TEEN","YOUNGADULT","MIDDLE","OLD"],
-    "gender" : ["MALE","FEMALE"],
-    "activity" : ["LOW","MEDIUM","HIGH","VERYHIGH"],
-    "height": [1.8,"meters"],
-    "weight" : [70,"kg"],
-    "goal" : ["LOSS","GAIN", "MUSCLE","GENERAL", "ENDURANCE"],
-    "schedule" : ["OPEN","FLEXIBLE","BUSY"]
-}
