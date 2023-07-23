@@ -36,7 +36,7 @@ const AiAdviceResult = ({advice, eat, avoid}) => {
               <img src={cross} alt="icon" />
               <h1 className='text-secondary font-bold text-[18px] pl-1'>FOOD TO AVOID</h1>
             </div>
-            <p className='text-[#fff] font-semibold'>{eat.map(e=>e.replace('_',' ')).join(', ')}</p>
+            <p className='text-[#fff] font-semibold'>{avoid.map(e=>e.replace('_',' ')).join(', ')}</p>
           </div>
         </div>
       </div>

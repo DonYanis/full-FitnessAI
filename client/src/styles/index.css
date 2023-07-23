@@ -189,13 +189,3 @@ input:focus {
     }
 }
 
-.user-info {
-		display: none;
-	}
-
-@media (max-width: 767px) {
-	.user-info {
-		display: flex;
-        flex-direction: row;
-	}
-}
